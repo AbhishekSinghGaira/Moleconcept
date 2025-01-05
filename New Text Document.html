@@ -10,41 +10,86 @@
       font-family: Arial, sans-serif;
       line-height: 1.4;
       margin: 0;
-      padding: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
     }
     h1, h2 {
       text-align: center;
+      color: #333;
       margin: 5px 0;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 12px;
+      margin: 10px 0;
+      background-color: #fff;
     }
     th, td {
-      border: 1px solid #000;
-      padding: 4px;
+      border: 1px solid #ddd;
+      padding: 8px;
       text-align: left;
+      font-size: 12px;
     }
     th {
-      background-color: #f4f4f4;
+      background-color: #4CAF50;
+      color: white;
     }
     tr:nth-child(even) {
-      background-color: #f9f9f9;
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
     }
     ul {
-      padding-left: 15px;
+      padding-left: 20px;
       font-size: 12px;
+    }
+    li {
+      margin: 4px 0;
     }
 
     /* Print-specific Styles */
     @media print {
       body {
         margin: 0;
+        background-color: #fff;
+        font-size: 10px;
       }
       table, th, td {
         border: 1px solid #000;
+        font-size: 10px;
       }
+      h1, h2 {
+        font-size: 14px;
+      }
+      ul, li {
+        font-size: 10px;
+      }
+      /* Page settings for A4 size */
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+      /* Reduce margins and adjust table width for better fit */
+      table {
+        width: 100%;
+        margin: 0;
+      }
+      th, td {
+        padding: 6px;
+      }
+      h1, h2 {
+        margin: 0;
+      }
+    }
+
+    /* Math Formula Styling */
+    .formula {
+      font-family: "Courier New", monospace;
+      background-color: #f4f4f4;
+      padding: 3px;
+      display: inline-block;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -63,47 +108,47 @@
     <tbody>
       <tr>
         <td>Moles (\(n\))</td>
-        <td>\( n = \frac{\text{Given Mass (g)}}{\text{Molar Mass (g/mol)}} \)</td>
+        <td class="formula">n = Given Mass (g) ÷ Molar Mass (g/mol)</td>
         <td>Ensure consistent units (mass in grams).</td>
       </tr>
       <tr>
         <td>Particles (\(N\))</td>
-        <td>\( N = n \times N_A \), \( N_A = 6.022 \times 10^{23} \)</td>
+        <td class="formula">N = n × N<sub>A</sub>, N<sub>A</sub> = 6.022 × 10<sup>23</sup></td>
         <td>Avogadro's number for particles.</td>
       </tr>
       <tr>
         <td>Volume at STP</td>
-        <td>\( V = n \times V_m \), \( V_m = 22.4 \, \text{L/mol} \)</td>
+        <td class="formula">V = n × V<sub>m</sub>, V<sub>m</sub> = 22.4 L/mol</td>
         <td>Applies to ideal gases.</td>
       </tr>
       <tr>
         <td>Ideal Gas Law</td>
-        <td>\( PV = nRT \)</td>
-        <td>\( R = 0.0821 \, \text{L·atm/(mol·K)} \).</td>
+        <td class="formula">PV = nRT</td>
+        <td>R = 0.0821 L·atm/(mol·K).</td>
       </tr>
       <tr>
         <td>Molarity (\(M\))</td>
-        <td>\( M = \frac{\text{Moles of Solute}}{\text{Volume (L)}} \)</td>
+        <td class="formula">M = Moles of Solute ÷ Volume (L)</td>
         <td>Volume must be in liters.</td>
       </tr>
       <tr>
         <td>Molality (\(m\))</td>
-        <td>\( m = \frac{\text{Moles of Solute}}{\text{Mass of Solvent (kg)}} \)</td>
+        <td class="formula">m = Moles of Solute ÷ Mass of Solvent (kg)</td>
         <td>Works best for dilute solutions.</td>
       </tr>
       <tr>
         <td>Empirical Formula</td>
-        <td>1. Find moles of each element.<br>2. Divide by smallest mole.<br>3. Adjust to whole numbers.</td>
+        <td class="formula">1. Find moles of each element.<br>2. Divide by smallest mole.<br>3. Adjust to whole numbers.</td>
         <td>Shows simplest ratio of atoms.</td>
       </tr>
       <tr>
         <td>Molecular Formula</td>
-        <td>\( \text{MF} = \text{EF} \times n, \, n = \frac{\text{Molar Mass}}{\text{EF Mass}} \)</td>
-        <td>\( n \) must be an integer.</td>
+        <td class="formula">MF = EF × n, n = Molar Mass ÷ EF Mass</td>
+        <td>n must be an integer.</td>
       </tr>
       <tr>
         <td>Percentage Composition</td>
-        <td>\( \%\text{Element} = \frac{\text{Mass of Element}}{\text{Molar Mass}} \times 100 \)</td>
+        <td class="formula">%Element = (Mass of Element ÷ Molar Mass) × 100</td>
         <td>Useful for empirical formula.</td>
       </tr>
     </tbody>
@@ -121,28 +166,28 @@
     <tbody>
       <tr>
         <td>Dalton’s Law</td>
-        <td>\( P_{\text{total}} = \sum P_i \), \( P_i = X_i \cdot P_{\text{total}} \)</td>
+        <td class="formula">P<sub>total</sub> = ΣP<sub>i</sub>, P<sub>i</sub> = X<sub>i</sub> · P<sub>total</sub></td>
         <td>Gas mixtures.</td>
       </tr>
       <tr>
         <td>Limiting Reagent</td>
-        <td>Smallest \( \frac{\text{Moles}}{\text{Coefficient}} \)</td>
+        <td class="formula">Smallest (Moles ÷ Coefficient)</td>
         <td>Determines product formed.</td>
       </tr>
       <tr>
         <td>Density of Gas</td>
-        <td>\( \rho = \frac{PM}{RT} \)</td>
-        <td>Relates \( P, M, T \).</td>
+        <td class="formula">ρ = PM ÷ RT</td>
+        <td>Relates P, M, T.</td>
       </tr>
     </tbody>
   </table>
 
   <h2>Constants</h2>
   <ul>
-    <li>Avogadro’s Number (\(N_A\)): \( 6.022 \times 10^{23} \, \text{particles/mol} \)</li>
-    <li>Molar Volume (\(V_m\)) at STP: \( 22.4 \, \text{L/mol} \)</li>
-    <li>Universal Gas Constant (\(R\)): \( 0.0821 \, \text{L·atm/(mol·K)} \) or \( 8.314 \, \text{J/(mol·K)} \)</li>
-    <li>STP Conditions: \( T = 273 \, \text{K}, P = 1 \, \text{atm} \)</li>
+    <li>Avogadro’s Number (N<sub>A</sub>): 6.022 × 10<sup>23</sup> particles/mol</li>
+    <li>Molar Volume (V<sub>m</sub>) at STP: 22.4 L/mol</li>
+    <li>Universal Gas Constant (R): 0.0821 L·atm/(mol·K) or 8.314 J/(mol·K)</li>
+    <li>STP Conditions: T = 273 K, P = 1 atm</li>
   </ul>
 
   <h2>Pro Tips</h2>
